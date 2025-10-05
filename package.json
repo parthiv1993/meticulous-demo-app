@@ -15,12 +15,12 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@alwaysmeticulous/cli": "^2.239.1",
     "@biomejs/biome": "2.2.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "meticulous": "^0.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
