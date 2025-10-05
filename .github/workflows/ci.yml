@@ -23,4 +23,4 @@ jobs:
       # Add Meticulous integration step here when ready
       # Example:
       - name: Run Meticulous Tests
-        run: npx @alwaysmeticulous/cli test --api-key ${{ secrets.METICULOUS_API_KEY }}
+        run: npx @alwaysmeticulous/cli run-all-tests-in-cloud --apiToken ${{ secrets.METICULOUS_API_TOKEN }}
