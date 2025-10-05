@@ -24,6 +24,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <head>
+  ...
+  {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
+    // eslint-disable-next-line @next/next/no-sync-scripts
+    <script
+      data-recording-token="mVCelm9exLNBzex5hAs5dGYcbGnVJ3r6BlpWJdd7"
+      data-is-production-environment="false"
+      src="https://snippet.meticulous.ai/v1/meticulous.js"
+    />
+  )}
+  ...
+</head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

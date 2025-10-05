@@ -22,5 +22,5 @@ jobs:
 
       # Add Meticulous integration step here when ready
       # Example:
-      # - name: Run Meticulous Tests
-      #   run: npx meticulous test --api-key ${{ secrets.METICULOUS_API_KEY }}
+      - name: Run Meticulous Tests
+        run: npx meticulous test --api-key ${{ secrets.METICULOUS_API_KEY }}
