@@ -76,8 +76,18 @@ export default function JokePage() {
             transform: loading ? 'scale(0.95)' : 'scale(1)',
             transition: 'all 0.3s ease'
           }}
-          onMouseOver={(e) => !loading && (e.target.style.transform = 'scale(1.05)')}
-          onMouseOut={(e) => !loading && (e.target.style.transform = 'scale(1)')}
+          onMouseOver={(e) => {
+            if (!loading) {
+              const target = e.target as HTMLButtonElement;
+              if (target && target.style) target.style.transform = 'scale(1.05)';
+            }
+          }}
+          onMouseOut={(e) => {
+            if (!loading) {
+              const target = e.target as HTMLButtonElement;
+              if (target && target.style) target.style.transform = 'scale(1)';
+            }
+          }}
         >
           {loading ? "🔄 Loading..." : "🎯 Get a Joke"}
         </button>
