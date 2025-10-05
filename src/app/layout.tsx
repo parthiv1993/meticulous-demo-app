@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-  ...
+  
   {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
     // eslint-disable-next-line @next/next/no-sync-scripts
     <script
@@ -34,11 +35,14 @@ export default function RootLayout({
       src="https://snippet.meticulous.ai/v1/meticulous.js"
     />
   )}
-  ...
+  
 </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav style={{padding: 16, borderBottom: "1px solid #eee"}}>
+          <Link href="/">Home</Link> | <Link href="/joke">Joke</Link>
+        </nav>
         {children}
       </body>
     </html>
