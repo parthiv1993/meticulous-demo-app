@@ -41,7 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav style={{padding: 16, borderBottom: "1px solid #eee"}}>
-          <Link href="/">Home</Link> | <Link href="/joke">Joke</Link>
+          <Link href="/">Home</Link> | <Link href="/joke">Joke</Link> | <Link href="/todos">Todos</Link>
         </nav>
         {children}
       </body>
