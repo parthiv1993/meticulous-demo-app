@@ -44,17 +44,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             node-modules-${{ runner.os }}
 
       - name: Install dependencies
         run: |
-          yarn install --frozen-lockfile --non-interactive
+          npm install --frozen-lockfile --non-interactive
 
       - name: Build project
         run: |
-          yarn build
+          npm run build
 
       - name: Serve project
         # TODO: Update these commands to serve your app's frontend locally, and
@@ -65,7 +65,7 @@ jobs:
         # The sleep is often required to ensure your app is readily being served
         # by the time the Meticulous tests start
         run: |
-          yarn serve &
+          npm run dev &
           sleep 30
 
       - name: Run Meticulous tests
@@ -74,4 +74,4 @@ jobs:
           api-token: ${{ secrets.METICULOUS_API_TOKEN }}
           app-directory: ".next"
           # TODO: Update the port and protocol below to match your app's frontend
-          app-url: "http://localhost:3000/"
+          app-url: "http://localhost:3000"
